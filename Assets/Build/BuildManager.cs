@@ -7,8 +7,6 @@ namespace Build
     {
 
         [SerializeField] GameObject _wallPrefab;
-        [SerializeField] LayerMask _buildLayerMask;
-        [SerializeField] float _maxDistance = 10f;
 
         Vector3 _wallExtents;
         IRayProvider _rayProvider;
