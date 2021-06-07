@@ -556,7 +556,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 120
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cc: {fileID: 963194229}
-  speed: 5
+  speed: 3.5
   minVerticalAngle: -180
   maxVerticalAngle: 180
   mouseXSensitivity: 200
@@ -638,12 +638,12 @@ GameObject:
   - component: {fileID: 1492157498}
   - component: {fileID: 1492157497}
   - component: {fileID: 1492157499}
+  - component: {fileID: 1492157500}
   - component: {fileID: 1492157501}
   - component: {fileID: 1492157505}
   - component: {fileID: 1492157503}
   - component: {fileID: 1492157504}
   - component: {fileID: 1492157502}
-  - component: {fileID: 1492157506}
   m_Layer: 0
   m_Name: BuildManager
   m_TagString: Untagged
@@ -695,6 +695,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f029c9c483b694bbd57b042980397e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1492157500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492157496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f360b7a4a988954993d7a3c51442744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 768
+  _maxDistance: 10
 --- !u!114 &1492157501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,22 +789,6 @@ MonoBehaviour:
     type: 3}
   _player: {fileID: 963194228}
   _steepnessDegree: 30
---- !u!114 &1492157506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492157496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f360b7a4a988954993d7a3c51442744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buildLayerMask:
-    serializedVersion: 2
-    m_Bits: 768
-  _maxDistance: 10
 --- !u!1 &1494771310
 GameObject:
   m_ObjectHideFlags: 0

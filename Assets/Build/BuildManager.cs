@@ -17,6 +17,8 @@ namespace Build
         IBaseBuildResponse _baseBuildResponse;
         ISelector _selector;
 
+        Vector3 _aimPoint;
+
         void Start()
         {
 
@@ -47,6 +49,7 @@ namespace Build
             if (selectionTransform != null)
             {
                 Vector3 aimPoint = _selector.GetAimPoint();
+                _aimPoint = aimPoint;
 
                 if (selectionTransform.CompareTag("Wall"))
                 {
@@ -95,6 +98,12 @@ namespace Build
             }
 
             return buildDir;
+        }
+
+        void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(_aimPoint, 0.3f);
         }
 
     }

@@ -16,8 +16,6 @@ namespace Build
         float _topGroundY;
         Vector3 _newPos;
 
-        Vector3 _vec;
-
         void Awake()
         {
             _validBuildPosProvider = GetComponent<IValidBuildPosProvider>();
@@ -29,7 +27,6 @@ namespace Build
             Destroy(_tempWall);
 
             _topGroundY = _ground.position.y + _ground.GetComponent<Renderer>().bounds.extents.y;
-            _vec = transform.forward;
         }
 
         bool IBaseBuildResponse.ShouldBuild(Vector3 aimPosition)

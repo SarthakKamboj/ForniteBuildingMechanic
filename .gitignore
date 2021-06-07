@@ -10,4 +10,5 @@ Temp
 **/*.meta
 .gitignore.swp
 Builds
+Assets/lines.py
 .vscode
