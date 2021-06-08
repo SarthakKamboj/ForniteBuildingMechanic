@@ -1,9 +1,12 @@
 using UnityEngine;
 
-class MouseRayProvider : MonoBehaviour, IRayProvider
+namespace Selection
 {
-    public Ray GetRay()
+    class MouseRayProvider : MonoBehaviour, IRayProvider
     {
-        return Camera.main.ScreenPointToRay(Input.mousePosition);
+        public Ray GetRay()
+        {
+            return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
     }
 }

@@ -1,6 +1,9 @@
 using UnityEngine;
 
-interface IRayProvider
+namespace Selection
 {
-    Ray GetRay();
+    interface IRayProvider
+    {
+        Ray GetRay();
+    }
 }

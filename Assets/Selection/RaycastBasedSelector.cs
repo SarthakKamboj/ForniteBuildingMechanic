@@ -1,28 +1,31 @@
 using UnityEngine;
 
-public class RaycastBasedSelector : MonoBehaviour, ISelector
+namespace Selection
 {
-
-    [SerializeField] LayerMask _layerMask;
-    [SerializeField] float _maxDistance = 10f;
-    [SerializeField] RaycastHit _hit;
-
-    public void CheckRay(Ray ray)
+    public class RaycastBasedSelector : MonoBehaviour, ISelector
     {
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, _maxDistance, _layerMask))
+
+        [SerializeField] LayerMask _layerMask;
+        [SerializeField] float _maxDistance = 10f;
+        [SerializeField] RaycastHit _hit;
+
+        public void CheckRay(Ray ray)
         {
-            _hit = hit;
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, _maxDistance, _layerMask))
+            {
+                _hit = hit;
+            }
         }
-    }
 
-    public Vector3 GetAimPoint()
-    {
-        return _hit.point;
-    }
+        public Vector3 GetAimPoint()
+        {
+            return _hit.point;
+        }
 
-    public Transform GetSelection()
-    {
-        return _hit.transform;
+        public Transform GetSelection()
+        {
+            return _hit.transform;
+        }
     }
 }
