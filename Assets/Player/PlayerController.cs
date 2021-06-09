@@ -9,13 +9,13 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
 
-        IInput _input;
-        IMovementResponse[] _movementResponses;
+        IInputProvider _input;
+        IMovementResponse _movementResponse;
 
         void Awake()
         {
-            _movementResponses = GetComponents<IMovementResponse>();
-            _input = GetComponent<IInput>();
+            _movementResponse = GetComponent<IMovementResponse>();
+            _input = GetComponent<IInputProvider>();
         }
 
         void Update()
@@ -25,11 +25,7 @@ namespace Player
 
             Vector3 moveDir = new Vector3(horizontal, 0f, vertical).normalized;
 
-            foreach (IMovementResponse movementResponse in _movementResponses)
-            {
-                movementResponse.Move(moveDir);
-            }
-
+            _movementResponse.Move(moveDir);
         }
     }
 }

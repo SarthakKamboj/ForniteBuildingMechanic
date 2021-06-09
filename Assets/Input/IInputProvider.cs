@@ -2,7 +2,7 @@
 
 namespace ControlInput
 {
-    public interface IInput
+    public interface IInputProvider
     {
         float GetHorizontalInput();
         float GetVerticalInput();

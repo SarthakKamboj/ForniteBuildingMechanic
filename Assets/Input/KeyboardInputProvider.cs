@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ControlInput
 {
-    public class KeyboardInputProvider : MonoBehaviour, IInput
+    public class KeyboardInputProvider : MonoBehaviour, IInputProvider
     {
         public float GetHorizontalInput()
         {

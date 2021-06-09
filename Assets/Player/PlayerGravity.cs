@@ -10,11 +10,19 @@ namespace Player
         [SerializeField] Transform _groundCheck;
         [SerializeField] LayerMask _groundLayerMask;
         [SerializeField] float jumpHeight = 10f;
+        [SerializeField] Animator _animator;
 
         float gravity = 9.8f;
         float yVel = 0f;
 
         bool jumped = true;
+
+        int JumpHash;
+
+        void Awake()
+        {
+            JumpHash = Animator.StringToHash("Jumping");
+        }
 
         void Update()
         {
@@ -24,6 +32,7 @@ namespace Player
             {
                 yVel = 2 * gravity * jumpHeight;
                 jumped = true;
+                _animator.SetBool(JumpHash, true);
             }
 
             HandleCollision();
@@ -40,6 +49,7 @@ namespace Player
                 {
                     jumped = false;
                     yVel = -0.1f;
+                    _animator.SetBool(JumpHash, false);
                 }
             }
             else
